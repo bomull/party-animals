@@ -2,7 +2,7 @@ class CreatePartyAnimals < ActiveRecord::Migration[5.2]
   def change
     create_table :party_animals do |t|
       t.string :party_name
-      t.text :availability
+      t.string :available_dates
       t.string :image
       t.string :category
       t.string :location
