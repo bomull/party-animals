@@ -1,11 +1,12 @@
 <h1>These are people are from city and they like </h1>
 
 <div>
-  <div class="card">
-
-    <% 9.times.each do |party_animal| %>
-    <%= render 'shared/card',  pa: party_animal  %>
-  <% end %>
+  <div class="cards">
+    <% @party_animals.each do |party_animal| %>
+      <%= link_to party_animal_path(party_animal) do%>
+        <%= render 'shared/card',  pa: party_animal  %>
+        <% end %>
+    <% end %>
   </div>
 </div>
 
