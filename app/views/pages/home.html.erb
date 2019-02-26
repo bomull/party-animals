@@ -1,5 +1,18 @@
-<!-- <p>Find me in app/views/pages/home.html.erb</p> -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'party.png' %>);">
+  <div class="container margintopzero">
+    <h1>Find your new best friend</h1>
 
+      <form class="form-inline" action="/party_animals" method="get">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="insert-city" class="sr-only">Search</label>
+          <input type="search" class="form-control" placeholder="Search for your city">
+        </div>
+        <div class="btn-search">
+          <button type="submit" class="btn btn-primary mb-2">Let's go</button>
+        </div>
+      </form>
 
-<h1>Find your new best friend</h1>
+  </div>
+</div>
+
 
