@@ -5,10 +5,12 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="btn-treehouse">Register</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+    <% unless user_signed_in? %>
+    <!-- <a href="" class="btn-treehouse">Register</a> -->
+    <li><%= link_to 'Register', new_user_registration_path, class: "btn-treehouse"  %></li>
+    <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a> -->
+    <li><%= link_to 'Log in', user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+    <% end %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
@@ -16,7 +18,11 @@
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li>
+            <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+          </li>
+          <!-- <li><a href="#">Log Out</a></li> -->
+          <li><%= link_to 'Log out',  destroy_user_session_path, method: :delete  %></li>
         </ul>
       </div>
     </div>
@@ -27,9 +33,14 @@
     <div class="dropdown">
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Messagese</a></li>
+       <!--  <li><a href="#">Register</a></li> -->
+       <% unless user_signed_in? %>
+       <li><%= link_to 'Register', new_user_registration_path  %></li>
+        <!-- <li><a href="#">Login</a></li> -->
+        <li><%= link_to 'Log in', user_session_path  %></li>
+        <% end %>
+        <li><a href="#">Messages</a></li>
+        <li><%= link_to 'Log out',  destroy_user_session_path, method: :delete  %></li>
       </ul>
     </div>
   </div>

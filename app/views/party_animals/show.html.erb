@@ -1,0 +1,9 @@
+<h3><%= @party_animal.party_name %></h3>
+<p><%= @party_animal.category %></p>
+<p><%= @party_animal.location %></p>
+<%= cl_image_tag(@party_animal.image) %>
+<p>Dates available:</p>
+<p><%= @party_animal.available_dates %></p>
+
+
+<%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal), class: "btn-treehouse" %>
