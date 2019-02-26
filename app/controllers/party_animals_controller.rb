@@ -1,20 +1,20 @@
 class PartyAnimalsController < ApplicationController
-
   def index
-    @party_animals = Party_Animal.all
+    @party_animals = PartyAnimal.all
   end
 
   def show
-    @party_animal = Party_Animal.find(params[:id])
-  end
-
-  def update
-
+    @party_animal = PartyAnimal.find(params[:id])
   end
 
   private
 
   def party_animal_params
     params.require(:party_animal).permit(:image, :category, :location, :availability)
+  end
+
+
+  def new
+    @party_animal = PartyAnimal.new
   end
 end
