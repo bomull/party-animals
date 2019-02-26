@@ -1,11 +1,11 @@
 class PartyAnimalsController < ApplicationController
 
   def index
-    @party_animals = Party_Animal.all
+    @party_animals = PartyAnimal.all
   end
 
   def show
-    @party_animal = Party_Animal.find(params[:id])
+    @party_animal = PartyAnimal.find(params[:id])
   end
 
   def update

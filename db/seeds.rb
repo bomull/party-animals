@@ -13,13 +13,14 @@ User.destroy_all
 Booking.destroy_all
 puts 'All records destroyed!'
 
-categories = ["techno and house", "noise and experimental", "garage and drum 'n' bass", "sexparty", "queer"]
+categories = ["techno and house", "noise and experimental", "garage and drum 'n' bass", "hipster", "sexparty", "queer"]
 locations = ["Berlin", "London"]
+images = [ 'resized000', 'resized001', 'resized002', 'resized003', 'resized004', 'resized005', 'resized006', 'resized010', 'resized011', 'resized012', 'resized022',]
 
 30.times do
   user = User.new(first_name: "#{Faker::Name.first_name}", last_name: "#{Faker::Name.last_name}", email: "#{Faker::Internet.unique.email}", age: rand(24..43), password: "aaaaaa")
   user.save!
-  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: "#{categories.sample}", location: "#{locations.sample}")
+  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: "#{categories.sample}", location: "#{locations.sample}", image: "#{images.sample}.png")
   pa.save!
 end
 
