@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :party_animals, only: [:index, :show, :update] do
-      resources :bookings, only: [:new, :create, :destroy]
+      resources :bookings, only: [:new, :create]
   end
-end
 
+  resources :bookings, only: [:destroy, :show]
+end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
