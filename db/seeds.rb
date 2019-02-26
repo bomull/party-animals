@@ -15,12 +15,19 @@ puts 'All records destroyed!'
 
 categories = ["techno and house", "noise and experimental", "garage and drum 'n' bass", "hipster", "sexparty", "queer"]
 locations = ["Berlin", "London"]
-images = [ 'resized000', 'resized001', 'resized002', 'resized003', 'resized004', 'resized005', 'resized006', 'resized010', 'resized011', 'resized012', 'resized022',]
+images = [ 'resized000.png', 'resized001.png', 'resized002.png',
+           'resized003.png', 'resized004.png', 'resized005.png',
+           'resized006.png', 'resized010.png', 'resized011.png',
+           'resized012.png', 'resized022.png', '1.jpg', '2.jpg',
+           '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '9.jpg',
+           '10.jpg', '11.jpg']
 
-30.times do
+counter = 0
+images.length.times do
   user = User.new(first_name: "#{Faker::Name.first_name}", last_name: "#{Faker::Name.last_name}", email: "#{Faker::Internet.unique.email}", age: rand(24..43), password: "aaaaaa")
   user.save!
-  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: "#{categories.sample}", location: "#{locations.sample}", image: "#{images.sample}.png")
+  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: "#{categories.sample}", location: "#{locations.sample}", image: "#{images[counter]}")
+  counter += 1
   pa.save!
 end
 
