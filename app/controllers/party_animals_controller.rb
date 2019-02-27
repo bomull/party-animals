@@ -1,6 +1,6 @@
 class PartyAnimalsController < ApplicationController
   def index
-    @party_animals = PartyAnimal.all
+    @party_animals = PartyAnimal.where(location: params[:location])
   end
 
   def show
