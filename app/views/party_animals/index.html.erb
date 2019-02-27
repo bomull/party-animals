@@ -1,4 +1,8 @@
-<h1>These are people from <%= @location %> </h1>
+<% if params[:location].present? %>
+
+<h1>These are people from <%= params[:location].capitalize %> </h1>
+
+<%end %>
 
 <div>
   <div class="cards">

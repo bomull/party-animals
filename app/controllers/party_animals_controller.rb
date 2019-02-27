@@ -1,6 +1,10 @@
 class PartyAnimalsController < ApplicationController
   def index
-    @party_animals = PartyAnimal.where(location: params[:location])
+    if params[:location].blank?
+      @party_animals = PartyAnimal.all
+    else
+      @party_animals = PartyAnimal.where(location: params[:location].capitalize)
+    end
   end
 
   def show
@@ -17,5 +21,3 @@ class PartyAnimalsController < ApplicationController
     params.require(:party_animal).permit(:image, :category, :location, :availability)
   end
 end
-
-

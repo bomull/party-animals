@@ -5,7 +5,7 @@
     <h4><u>Upcoming bookings:</u></h4>
       <ol>
         <h4><% @bookings.each do |booking| %>
-          <li>You have a booking with <strong><%= booking.party_animal.party_name %></strong> on: <strong><%= booking.date %></strong> <%= link_to "Cancel this booking", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+          <li>You have a booking with <strong><%= booking.party_animal.party_name %></strong> on: <strong><%= booking.date.strftime('%A, %b %d') %></strong> <%= link_to "Cancel this booking", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
           </li>
         <% end %>
       </ol>
