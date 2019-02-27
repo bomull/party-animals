@@ -19,11 +19,7 @@ gem 'webpacker'
 # gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
 gem 'cloudinary', '~> 1.9.1'
-
-
-
-
-
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
