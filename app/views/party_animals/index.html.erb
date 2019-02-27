@@ -1,10 +1,10 @@
 <% if params[:location].present? %>
 
+<div class="container">
 <h1>These are people from <%= params[:location].capitalize %> </h1>
 
 <%end %>
 
-<div>
   <div class="cards">
     <% @party_animals.each do |party_animal| %>
       <%= link_to party_animal_path(party_animal) do%>
