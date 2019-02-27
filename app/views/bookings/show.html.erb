@@ -3,7 +3,7 @@
 <div class="container">
   <h1>Your booking request has been sent</h1>
   <h2>Booking informations:</h2>
-    <p> You sent a request to <%= @booking.party_animal.party_name %> for <%= @booking.date%> </p>
+    <p> You sent a request to <%= @booking.party_animal.party_name %> for <%= @booking.date.strftime('%A, %b %d')%> </p>
     <%= link_to 'Homepage', root_path, class: "btn btn-info"  %>
     <%= link_to 'PartyAnimal', party_animals_path, class: "btn btn-info"  %>
 </div>

@@ -1,10 +1,24 @@
-<% if params[:location].present? %>
+<div class="page-header">
+  <form class="form-inline" action="/party_animals" method="get">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="insert-city" class="sr-only">Search</label>
+        <input  name="location" type="text" class="form-control" placeholder="Search for your city">
+          </div>
+          <div class="form-group btn-search">
+            <button type="submit" class="btn btn-primary mb-2">Let's go</button>
+          </div>
+  </form>
 
-<h1>These are people from <%= params[:location].capitalize %> </h1>
 
-<%end %>
+  <div class="prty-animals-header">
+    <% if params[:location].present? %>
+        <h1>Here are Party Animals from <%= params[:location].capitalize %> </h1>
+    <% end %>
+  </div>
 
-<div>
+
+</div>
+
   <div class="cards">
     <% @party_animals.each do |party_animal| %>
       <%= link_to party_animal_path(party_animal) do%>
