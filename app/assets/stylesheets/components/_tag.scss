@@ -1,0 +1,12 @@
+.tag-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tag {
+  background: orange;
+  padding: 3px;
+  margin: 2px;
+  border-radius: 15px;
+}

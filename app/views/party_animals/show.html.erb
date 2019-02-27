@@ -1,5 +1,11 @@
 <h3><%= @party_animal.party_name %></h3>
-<p><%= @party_animal.category %></p>
+
+<div class="tag-container">
+  <% @party_animal.category.each do |tag| %>
+    <div class="tag"><%= tag %></div>
+  <% end %>
+</div>
+
 <p><%= @party_animal.location %></p>
 <%= cl_image_tag(@party_animal.image) %>
 <p>Dates available:</p>
@@ -9,3 +15,4 @@
 <%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal), class: "btn-treehouse" %>
 
 <%= link_to "Homepage", root_path %>
+
