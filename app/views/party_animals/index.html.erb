@@ -9,15 +9,16 @@
           </div>
   </form>
 
+
   <div class="prty-animals-header">
     <% if params[:location].present? %>
         <h1>Here are Party Animals from <%= params[:location].capitalize %> </h1>
     <% end %>
   </div>
 
+
 </div>
 
-<div>
   <div class="cards">
     <% @party_animals.each do |party_animal| %>
       <%= link_to party_animal_path(party_animal) do%>
