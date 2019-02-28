@@ -29,7 +29,7 @@ images.length.times do
   user = User.new(first_name: "#{Faker::Name.first_name}", last_name: "#{Faker::Name.last_name}", email: "#{Faker::Internet.unique.email}", age: rand(24..43), password: "aaaaaa")
   user.remote_image_url = 'https://res.cloudinary.com/dczcr1msw/image/upload/v1551107827/' + images[counter]
   user.save!
-  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: categories.sample(4), location: "#{locations.sample}", image: "#{images[counter]}", description: "#{beginnings.sample} #{Faker::GreekPhilosophers.quote} #{Faker::Hipster.sentence(50, false)}")
+  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: categories.sample(4), location: "#{locations.sample}", image: "#{images[counter]}", description: "#{beginnings.sample} #{Faker::GreekPhilosophers.quote} #{Faker::Hipster.sentence(95, false)}")
   pa.remote_image_url = 'https://res.cloudinary.com/dczcr1msw/image/upload/v1551107827/' + images[counter]
   counter += 1
   pa.save!
