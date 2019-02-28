@@ -1,8 +1,9 @@
 <div class='container' id="container">
     <div class="col-xs-12">
       <div class='row'>
-    <h2>Welcome, <%= current_user.first_name %> <%= current_user.last_name %>.</h2>
-    <h3>Upcoming bookings:</h3>
+    <h1>Welcome, <%= current_user.first_name %> <%= current_user.last_name %>.</h1>
+    <%= cl_image_tag current_user.image , height: 300, width: 400, crop: :fill %>
+    <h3> These are your upcoming bookings:</h3>
       <ol>
         <h4><% @bookings.each do |booking| %>
           <li>You have a booking with <strong><%= booking.party_animal.party_name %></strong> on: <strong><%= booking.date.strftime('%A, %b %d') %></strong> <%= link_to "Cancel this booking", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
@@ -12,11 +13,37 @@
     </h4>
     </div>
   </div>
+
+<% unless current_user.party_animal %>
+<h1>Become a Party Animal</h1>
+
+<%= simple_form_for([current_user, @party_animal]) do |f| %>
+  <%= f.input :party_name %>
+  <%= f.input :location %>
+  <%= f.input :available_dates %>
+  <%= f.input :image %>
+  <%= f.input :image_cache, as: :hidden %>
+  <%= f.button :submit %>
+    <% end %>
+<% end %>
+
+<% if current_user.party_animal %>
+  <%= current_user.party_animal.party_name %>
+  <%= cl_image_tag current_user.party_animal.image , height: 300, width: 400, crop: :fill %>
+  <%= current_user.party_animal.location %>
+  <%= current_user.party_animal.available_dates%>
+  <%#= current_user.party_animal.photo %>
+<% end %>
+
+
   <div>
   <%= link_to 'Homepage', root_path, class: "btn btn-info"  %>
   <%= link_to 'Party Animals', party_animals_path, class: "btn btn-info"  %>
   </div>
 </div>
+
+
+
 
 
 

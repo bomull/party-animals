@@ -11,13 +11,20 @@ class PartyAnimalsController < ApplicationController
     @party_animal = PartyAnimal.find(params[:id])
   end
 
-  def new
-    @party_animal = PartyAnimal.new
+
+  def create
+    @party_animal = PartyAnimal.new(party_animal_params)
+    @party_animal.user = current_user
+    if @party_animal.save
+      redirect_to dashboard_path(current_user)
+    else
+      redirect_to dashboard_path(current_user)
+    end
   end
 
   private
 
   def party_animal_params
-    params.require(:party_animal).permit(:image, :category, :location, :availability)
+    params.require(:party_animal).permit(:image, :location, :availability, :party_name, :available_dates, :photo_cache)
   end
 end
