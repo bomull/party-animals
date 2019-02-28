@@ -21,12 +21,14 @@ images = [ 'resized000.png', 'resized001.png', 'resized002.png',
            'resized012.png', 'resized022.png', '1.jpg', '2.jpg',
            '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '9.jpg',
            '10.jpg', '11.jpg']
+beginnings = ["Like I always say:", "My motto is:", ""]
+
 
 counter = 0
 images.length.times do
-  user = User.new(first_name: "#{Faker::Name.first_name}", last_name: "#{Faker::Name.last_name}", email: "#{Faker::Internet.unique.email}", age: rand(24..43), password: "aaaaaa", image: "menu.svg")
+  user = User.new(first_name: "#{Faker::Name.first_name}", last_name: "#{Faker::Name.last_name}", email: "#{Faker::Internet.unique.email}", age: rand(24..43), password: "aaaaaa", image: "assets/menu.svg")
   user.save!
-  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: categories.sample(4), location: "#{locations.sample}", image: "#{images[counter]}")
+  pa = PartyAnimal.new(party_name: "#{Faker::FunnyName.unique.name}", user_id: "#{user.id}", category: categories.sample(4), location: "#{locations.sample}", image: "#{images[counter]}", description: "#{beginnings.sample} #{Faker::GreekPhilosophers.quote} #{Faker::Hipster.sentence(50, false)}")
   counter += 1
   pa.save!
 end
