@@ -17,9 +17,14 @@
       <h1>Party with <%= @party_animal.party_name %></h1>
       <h2>Crazy Berlin underground locations</h2>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      <p class="read-more">
-        <%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal)%>
-      </p>
+
+      <% if  current_user.nil? == false %>
+        <% unless current_user.party_animal.id == @party_animal.id %>
+          <p class="read-more">
+            <%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal)%>
+          </p>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <!--<p>Dates available:</p>-->
@@ -27,8 +32,7 @@
 
 
 
-  <!--<%= link_to "Homepage", root_path %>-->
-  </div>
+
 
 
 
