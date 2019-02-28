@@ -1,10 +1,13 @@
 <div class="container">
   <div>
-    <%= simple_form_for([@party_animal, @booking]) do |f| %>
-      <%= f.input :date, as: :date %>
+    <%= form_for([@party_animal, @booking]) do |f| %>
+      <%#= text_field_tag 'date', nil, class:'datepicker' %>
+      <%= f.text_field :date, class: "datepicker" %>
       <%= f.button :submit %>
     <% end %>
-    </div>
+  </div>
+
+
 </div>
 
 
