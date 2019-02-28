@@ -1,20 +1,20 @@
 .banner {
+  display: flex;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   text-align: center;
   margin: auto;
   width: auto;
-  height: 550px;
+  height: 830px;
 }
 
 .banner h1 {
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 70px;
   font-weight: bold;
-  margin-top: 170px;
+  margin-top: 300px;
   margin-bottom: 20px;
 }
 

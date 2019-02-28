@@ -10,6 +10,7 @@
  align-items: center;
  justify-content: space-between;
 }
+
 /* Logo */
 .navbar-wagon-brand img {
  height: 50px;
@@ -71,4 +72,10 @@
  border-left: 1px solid #E6E6E6;
  border-top: 1px solid #E6E6E6;
 }
+
+.transparent-nav {
+  background-color: transparent;
+}
+
+
 
