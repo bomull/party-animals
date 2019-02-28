@@ -10,10 +10,18 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # puts "------------"
+    # puts params
+    # puts "------------"
+    params[:booking][:date] = params[:booking][:date].to_datetime
+    # puts "------------"
+    # puts params
+    # puts "------------"
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @party_animal = PartyAnimal.find(params[:party_animal_id])
     @booking.party_animal = @party_animal
+    # raise
     if @booking.save
       redirect_to booking_path(@booking)
     else

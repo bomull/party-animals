@@ -3,4 +3,5 @@ class PartyAnimal < ApplicationRecord
   validates :party_name, uniqueness: true
   validates :party_name, presence: true
   serialize :category, Array
+  serialize :available_dates
 end
