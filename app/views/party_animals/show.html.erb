@@ -11,8 +11,9 @@
 <p>Dates available:</p>
 <p><%= @party_animal.available_dates %></p>
 
-
+<% unless current_user.party_animal.id == @party_animal.id %>
 <%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal), class: "btn-treehouse" %>
+<% end %>
 
 <%= link_to "Homepage", root_path %>
 
