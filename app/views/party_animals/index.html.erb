@@ -1,30 +1,27 @@
-<div class="page-header">
-  <form class="form-inline" action="/party_animals" method="get">
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="insert-city" class="sr-only">Search</label>
-        <input  name="location" type="text" class="form-control" placeholder="Search for your city">
-          </div>
-          <div class="form-group btn-search">
-            <button type="submit" class="btn btn-primary mb-2">Let's go</button>
-          </div>
-  </form>
-
-
-  <div class="prty-animals-header">
+<div class="container">
+  <div class="page-header">
+    <form class="form-inline" action="/party_animals" method="get">
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="insert-city" class="sr-only">Search</label>
+    <input  name="location" type="text" class="form-control" placeholder="Search for your city">
+    </div>
+    <div class="form-group btn-search">
+      <button type="submit" class="btn btn-primary mb-2">Let's go</button>
+    </div>
+    </form>
+  </div>
+  <div class="party-animals-header">
     <% if params[:location].present? %>
-        <h1>Here are Party Animals from <%= params[:location].capitalize %> </h1>
+      <h1>Party Animals for <%= params[:location].capitalize %> </h1>
     <% end %>
   </div>
-
-
-</div>
-
-  <div class="cards">
-    <% @party_animals.each do |party_animal| %>
-      <%= link_to party_animal_path(party_animal) do%>
-        <%= render 'shared/card',  pa: party_animal  %>
-        <% end %>
-    <% end %>
-  </div>
+    <div class="cards">
+      <% @party_animals.each do |party_animal| %>
+        <%= link_to party_animal_path(party_animal) do%>
+          <%= render 'shared/card',  pa: party_animal  %>
+          <% end %>
+      <% end %>
+    </div>
+   </div>
 </div>
 
