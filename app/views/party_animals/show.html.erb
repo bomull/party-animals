@@ -10,13 +10,14 @@
   <div class="blog-card">
     <div class="meta">
       <div class="photo">
-          <%= cl_image_tag(@party_animal.image) %>
+          <%= cl_image_tag(@party_animal.image, width: 400, heigth: 400) %>
       </div>
     </div>
     <div class="description">
       <h1>Party with <%= @party_animal.party_name %></h1>
       <h2>Crazy Berlin underground locations</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit. Veritatis, sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+      <p><%= @party_animal.description %></p>
 
       <% if  current_user.nil? == false %>
         <% unless current_user.party_animal.id == @party_animal.id %>
