@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2019_02_28_152139) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.string "photo"
     t.text "description"
     t.index ["user_id"], name: "index_party_animals_on_user_id"
   end
@@ -55,7 +54,6 @@ ActiveRecord::Schema.define(version: 2019_02_28_152139) do
     t.string "last_name"
     t.integer "age"
     t.string "image"
-    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -16,19 +16,24 @@
     <div class="description">
       <h1>Party with <%= @party_animal.party_name %></h1>
       <h2>Crazy Berlin underground locations</h2>
+
       <p><%= @party_animal.description %></p>
-      <p class="read-more">
-        <%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal)%>
-      </p>
+
+      <% if  current_user.nil? == false %>
+        <% unless current_user.party_animal.id == @party_animal.id %>
+          <p class="read-more">
+            <%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal)%>
+          </p>
+        <% end %>
+      <% end %>
     </div>
   </div>
-  <p>Dates available:</p>
+  <!--<p>Dates available:</p>-->
   <p><%= @party_animal.available_dates %></p>
 
 
 
-  <%= link_to "Homepage", root_path %>
-  </div>
+
 
 
 
