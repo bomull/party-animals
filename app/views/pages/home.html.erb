@@ -1,17 +1,25 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'party.png' %>);">
   <div class="container margintopzero">
+
     <h1>Find your new Party Animal!</h1>
 
-      <form class="form-inline" action="/party_animals" method="get">
-        <div class="form-group mx-sm-3 mb-2">
+    <form class="form-inline" action="/party_animals" method="get">
+      <div class= "testingclassinlinefix">
+        <div class="form-group mx-sm-3 mb-2" style="display: inline">
           <label for="insert-city" class="sr-only">Search</label>
-          <input  name="location" type="text" class="form-control" placeholder="Search for your city">
+          <input  name="location" type="text" class="form-control landingpageinputfield" placeholder="Search for your city">
           <!-- <input  name="date" type="text" class="datepicker"> -->
         </div>
         <div class="form-group btn-search">
-          <button type="submit" class="btn btn-primary mb-2">Let's go</button>
+          <%= link_to "Let's go", party_animals_path, class: "btn btn-flat" %>
         </div>
-      </form>
+      </div>
+    </form>
+
+    <div class="actn-btn">
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
+      <%= link_to "Register", new_user_registration_path, class: "btn btn-flat" %>
+    </div>
 
   </div>
 </div>
