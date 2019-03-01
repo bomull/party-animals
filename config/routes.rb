@@ -9,8 +9,12 @@ Rails.application.routes.draw do
     resources :party_animals, only: :create
   end
 
-  resources :bookings, only: [:destroy, :show]
+  resources :bookings, only: [:destroy, :show ]
   resources :dashboard, only: :show
+
+  resources :users, only: [] do
+    resources :bookings, only: :update
+  end
 
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
