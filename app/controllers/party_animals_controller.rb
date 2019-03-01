@@ -3,7 +3,7 @@ class PartyAnimalsController < ApplicationController
     if params[:location].blank?
       @party_animals = PartyAnimal.all
     else
-      @party_animals = PartyAnimal.where("location ILIKE ?", "%#{params[:location]}%")
+      @party_animals = PartyAnimal.where("location ILIKE ? AND NOT user_id=?", "%#{params[:location]}%", current_user)
       # @party_animals = PartyAnimal.where(location: params[:location].capitalize)
     end
   end
