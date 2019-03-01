@@ -18,12 +18,12 @@
         <% unless current_user.party_animal %>
         <h1>Become a Party Animal</h1>
         <%= simple_form_for([current_user, @party_animal]) do |f| %>
-          <%= f.input :party_name %>
+          <%= f.input :party_name, class: "form-control" %>
           <%= f.input :location %>
           <%= f.input :available_dates %>
           <%= f.input :image %>
           <%= f.input :image_cache, as: :hidden %>
-          <%= f.button :submit %>
+          <%= f.button :submit, class: "btn btn-success" %>
             <% end %>
         <% end %>
 
