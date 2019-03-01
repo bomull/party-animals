@@ -1,5 +1,5 @@
 <div class="container">
-  <div>
+  <div class="booking-div">
     <%= form_for([@party_animal, @booking]) do |f| %>
       <%#= text_field_tag 'date', nil, class:'datepicker' %>
       <%= f.label :name, "Select a date to party with #{@party_animal.party_name}:" %>
@@ -11,7 +11,7 @@
         // cal.destroy
         // cal.days
       </script>
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn btn-warning" %>
     <% end %>
   </div>
 
