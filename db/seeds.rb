@@ -25,7 +25,7 @@ beginnings = ["Like I always say:", "My motto is:", ""]
 
 
 counter = 0
-images.length.times do/bookings
+images.length.times do
   user = User.new(first_name: "#{Faker::Name.first_name}", last_name: "#{Faker::Name.last_name}", email: "#{Faker::Internet.unique.email}", age: rand(24..43), password: "aaaaaa")
   user.remote_image_url = 'https://res.cloudinary.com/dczcr1msw/image/upload/v1551107827/' + images[counter]
   user.save!
