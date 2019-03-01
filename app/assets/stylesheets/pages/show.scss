@@ -1,3 +1,4 @@
+
 .tag {
   background: #d9d9d9;
   border-radius: 3px 0 0 3px;
@@ -165,7 +166,8 @@ $color_grey_dark: #a2a2a2;
     }
     h1 {
       line-height: 1;
-      margin: 0;
+      margin-top: 8px;
+      margin-bottom: 10px;
       font-size: 1.7rem;
     }
     h2 {
@@ -177,12 +179,13 @@ $color_grey_dark: #a2a2a2;
     }
     .read-more {
       text-align: right;
+      text-transform: uppercase;
       a {
         color: #38C0B0;
         display: inline-block;
         position: relative;
         &:after {
-          content: "\f061";
+          content: "\f118";
           font-family: FontAwesome;
           margin-left: -10px;
           opacity: 0;
