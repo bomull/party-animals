@@ -1,5 +1,11 @@
 
+
 <div class="container">
+  <div class="party-animals-header">
+  <% if params[:location].present? %>
+    <h1>Party Animals in <%= params[:location].capitalize %> </h1>
+  <% end %>
+</div>
   <div class="page-header">
     <form class="form-inline" action="/party_animals" method="get" style="display: inline">
       <div class="form-group mx-sm-3 mb-2">
@@ -9,11 +15,7 @@
       </div>
     </form>
   </div>
-  <div class="party-animals-header">
-    <% if params[:location].present? %>
-      <h1>Party Animals in <%= params[:location].capitalize %> </h1>
-    <% end %>
-  </div>
+
     <div class="cards">
       <% @party_animals.each do |party_animal| %>
         <%= link_to party_animal_path(party_animal) do%>
