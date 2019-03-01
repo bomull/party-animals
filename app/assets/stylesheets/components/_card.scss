@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
+  row-gap: 400px;
 }
 
 // Smallest device
@@ -76,22 +77,30 @@
   margin-top: 30px;
 }
 
-.container h1 {
-  margin-bottom: 30px;
-}
-
 .card-polaroid {
+    // display: flex;
     position: absolute;
+    // text-align: center;
     // border: 1px solid darkgrey;
     background-color: white;
     padding: 15px 15px 60px 15px;
     box-shadow: 5px 10px 10px darkgrey;
     margin: 20px;
+    height: 380.35px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-.polaroid:after
+.pa-name {
+  // display: inline;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+  color: black;
+  width: 250px;
+}
 
-{
+.polaroid:after {
     content: attr(polaroid-caption);
     position: absolute;
     bottom: 0px;

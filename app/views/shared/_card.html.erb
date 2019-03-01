@@ -4,12 +4,12 @@
 </div> -->
 
 
-<!-- <div class="card-polaroid", polaroid-caption=<%= pa.party_name %>>
-  <%#= cl_image_tag(pa.image, width: 300, height: 300, gravity: "faces", crop: "fill") %>
-  <p><%= pa.party_name %></p>
-</div> -->
-
-<div class="card-category">
-  <%= cl_image_tag(pa.image, width: 380, height: 300, gravity: "faces", crop: "fill") %>
-  <p><%= pa.party_name %></p>
+<div class="card-polaroid", polaroid-caption=<%= pa.party_name %>>
+  <%= cl_image_tag(pa.image, width: 250, height: 250, gravity: "faces", crop: "fill") %>
+  <p class="pa-name"><%= pa.party_name %></p>
 </div>
+
+<!-- <div class="card-category"> -->
+  <%#= cl_image_tag(pa.image, width: 380, height: 300, gravity: "faces", crop: "fill") %>
+  <!-- <p><%= pa.party_name %></p> -->
+<!-- </div> -->
