@@ -13,3 +13,18 @@
   text-decoration: none;
   color: white;
 }
+
+.btn-flat {
+  color: white;
+  padding: 6px 17px;
+  border-radius: 4px;
+  background: #9BA3A3;
+  transition: background 0.3s ease;
+  // margin-top: 10px;
+}
+
+.btn-flat:hover {
+  background: #37C0B0;
+  color: white;
+}
+
