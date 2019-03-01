@@ -26,6 +26,6 @@ class PartyAnimalsController < ApplicationController
   private
 
   def party_animal_params
-    params.require(:party_animal).permit(:image, :location, :availability, :party_name, :available_dates, :photo_cache)
+    params.require(:party_animal).permit(:image, :location, :availability, :party_name, :available_dates, :photo_cache, :description)
   end
 end
