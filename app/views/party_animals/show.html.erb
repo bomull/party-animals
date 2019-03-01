@@ -6,26 +6,4 @@
     <% end %>
   </div>
 
-  <p><%= @party_animal.location %></p>
-  <div class="blog-card">
-    <div class="meta">
-      <div class="photo">
-          <%= cl_image_tag(@party_animal.image, width: 400, height: 400) %>
-      </div>
-    </div>
-    <div class="description">
-      <h1>Party with <%= @party_animal.party_name %></h1>
-      <h2>Crazy <%= @party_animal.location %> underground locations</h2>
-
-      <p><%= @party_animal.description %></p>
-
-      <% if current_user.nil? == false %>
-        <% if current_user.party_animal.nil? || current_user.party_animal.id  != @party_animal.id %>
-          <p class="read-more">
-            <%= link_to "Invite #{@party_animal.party_name} to party", new_party_animal_booking_path(@party_animal)%>
-          </p>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <p><%= @party_animal.available_dates %></p>
+<%= render 'shared/blog-card',  pa: @party_animal  %>

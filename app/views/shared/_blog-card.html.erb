@@ -1,0 +1,25 @@
+<div class="blog-card">
+    <div class="meta">
+      <div class="photo">
+          <%= cl_image_tag(pa.image, width: 400, heigth: 400) %>
+      </div>
+    </div>
+    <div class="description">
+      <% if pa.user == current_user %>
+        <p>This is your PartyAnimal</p>
+      <% else %>
+        <h1>Party with <%= pa.party_name %></h1>
+      <% end %>
+        <h2>One of the wildest partyanimals in <%= pa.location %></h2>
+
+      <p><%= pa.description %></p>
+
+      <% if current_user.nil? == false %>
+        <% if current_user.party_animal.nil? || current_user.party_animal.id  != pa.id %>
+          <p class="read-more">
+            <%= link_to "Invite #{pa.party_name} to party", new_party_animal_booking_path(pa)%>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>

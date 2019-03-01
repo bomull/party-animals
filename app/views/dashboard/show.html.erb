@@ -32,21 +32,23 @@
           <%= f.input :available_dates %>
           <%= f.input :image %>
           <%= f.input :image_cache, as: :hidden %>
+          <%= f.input :description %>
           <%= f.button :submit, class: "btn btn-success" %>
             <% end %>
         <% end %>
 
         <% if current_user.party_animal %>
-          <%= current_user.party_animal.party_name %>
-          <%= cl_image_tag current_user.party_animal.image , height: 300, width: 400, crop: :fill %>
-          <%= current_user.party_animal.location %>
-          <%= current_user.party_animal.available_dates%>
+          <%#= current_user.party_animal.party_name %>
+          <%#= cl_image_tag current_user.party_animal.image , height: 300, width: 400, crop: :fill %>
+          <%#= current_user.party_animal.location %>
+          <%#= current_user.party_animal.available_dates%>
           <%#= current_user.party_animal.photo %>
+          <%= render 'shared/blog-card',  pa: current_user.party_animal%>
+          <h3>These are the invitations from the people who would love to party with you:</h3>
         <% end %>
     </div>
   </div>
 
-  <h3>These are the invitations from the people who would love to party with you:</h3>
   <ol>
     <h4>
       <% @invitations.each do |invitation| %>
@@ -73,14 +75,6 @@
     <%= link_to 'Party Animals', party_animals_path, class: "btn btn-info"  %>
   </div>
 </div>
-
-<%# if booking.confirmed? == nil %>
- <!--  <p>Pending</p>
-<% #elsif booking.confirmed? == true %>
-  <p>Accepted</p>
-<% #else %>
-  <p>Declined</p>
- -->
 
 
 
