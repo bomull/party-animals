@@ -79,3 +79,27 @@
 .container h1 {
   margin-bottom: 30px;
 }
+
+.card-polaroid {
+    position: absolute;
+    // border: 1px solid darkgrey;
+    background-color: white;
+    padding: 15px 15px 60px 15px;
+    box-shadow: 5px 10px 10px darkgrey;
+    margin: 20px;
+}
+
+.polaroid:after
+
+{
+    content: attr(polaroid-caption);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 30px;
+    // text-align: center;
+    margin: 20px;
+    // font-family: 'Indie Flower', cursive;
+}

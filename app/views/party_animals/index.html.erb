@@ -1,13 +1,12 @@
+
 <div class="container">
   <div class="page-header">
-    <form class="form-inline" action="/party_animals" method="get">
-   <div class="form-group mx-sm-3 mb-2">
-    <label for="insert-city" class="sr-only">Search</label>
-    <input  name="location" type="text" class="form-control" placeholder="Search for your city">
-    </div>
-    <div class="form-group btn-search">
-      <button type="submit" class="btn btn-primary mb-2">Let's go</button>
-    </div>
+    <form class="form-inline" action="/party_animals" method="get" style="display: inline">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="insert-city" class="sr-only">Search</label>
+        <input  name="location" type="text" class="form-control" placeholder="Search for your city">
+          <%= link_to "Let's go", party_animals_path, class: "btn btn-flat" %>
+      </div>
     </form>
   </div>
   <div class="party-animals-header">
