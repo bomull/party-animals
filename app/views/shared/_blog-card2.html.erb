@@ -1,0 +1,39 @@
+<div class="blog-card2">
+    <div class="description">
+        <p>Welcome, <%= current_user.first_name + " " + current_user.last_name %>
+        </p>
+        <h2>Ready to have a party?</h2>
+        <% if current_user.bookings.blank? %>
+          <p>For the moment you have not sent any invitations to our party animals</p>
+        <% else %>
+
+          <div>
+              <p>These are the invitations you have sent:</p>
+              <ol>
+                  <% @bookings.each do |booking| %>
+                  <li>You have a booking with <strong>
+                          <%= booking.party_animal.party_name %></strong>
+                      on
+                      <%= booking.date.strftime('%A, %b %d') %>
+                      <%= link_to "Cancel booking", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+                      <% if booking.confirmed == nil %>
+                      <p>Status: <em>Pending</em></p>
+                      <% elsif booking.confirmed? == true %>
+                      <p>Status: <em>Accepted</em></p>
+                      <% else %>
+                      <p>Status:<em>Declined</em></p>
+                      <% end %>
+                  </li>
+                  <% end %>
+              </ol>
+              <% end %>
+           </div>
+    </div>
+
+        <div class="meta">
+            <div class="photo">
+                <%= cl_image_tag(pa.image, width: 400, heigth: 400) %>
+            </div>
+        </div>
+</div>
+

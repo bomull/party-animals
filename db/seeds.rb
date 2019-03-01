@@ -20,7 +20,9 @@ images = [ 'resized000.png', 'resized001.png', 'resized002.png',
            'resized006.png', 'resized010.png', 'resized011.png',
            'resized012.png', 'resized022.png', '1.jpg', '2.jpg',
            '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '9.jpg',
-           '10.jpg', '11.jpg']
+           '10.jpg', '11.jpg', 'blueface.jpg']
+
+images = images.shuffle
 beginnings = ["Like I always say:", "My motto is:", ""]
 
 
