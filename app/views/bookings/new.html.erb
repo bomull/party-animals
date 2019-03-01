@@ -2,7 +2,15 @@
   <div>
     <%= form_for([@party_animal, @booking]) do |f| %>
       <%#= text_field_tag 'date', nil, class:'datepicker' %>
-      <%= f.text_field :date, class: "datepicker" %>
+      <%= f.label :name, "Select a date to party with #{@party_animal.party_name}:" %>
+      <%= f.text_field :date, class: "datepicker", id: "party_calendar" %>
+
+      <script>
+        let cal = document.getElementById("party_calendar")
+        console.log(cal)
+        // cal.destroy
+        // cal.days
+      </script>
       <%= f.button :submit %>
     <% end %>
   </div>
